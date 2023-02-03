@@ -1,4 +1,14 @@
-﻿const int REQUIRE_AGE_OF_PRESITENT = 35;
+﻿//5.Napisz program w C#, który sprawdzi czy podany przez użytkownika wiek uprawnia go do ubiegania się o stanowisko
+//    posła, 
+//    premiera, 
+//    sentarora, 
+//    prezydenta.
+    
+//    Dane testowe : 21
+//    Rezultat w terminalu:
+//    Możesz zostać posłem
+
+const int REQUIRE_AGE_OF_PRESITENT = 35;
 const int REQUIRE_AGE_MEMBER_OF_SENATE = 30;
 const int REQUIRE_AGE_MEMBER_OF_PARLAMENT = 21;
 
@@ -7,7 +17,7 @@ string positions = "";
 
 if (age >= REQUIRE_AGE_OF_PRESITENT)
 {
-    positions += "pezydentem ";
+    positions += "prezydentem ";
 }
 
 if (age >= REQUIRE_AGE_MEMBER_OF_SENATE)

@@ -1,4 +1,16 @@
-﻿Console.WriteLine("Podaj pierwszą liczbę: ");
+﻿//13.Napisz program, który będzie posiadał proste menu (wg. Wzoru poniżej) I będzie prostym kalkulatorem
+//    Podaj 
+//    pierwszą liczbę: ...Podaj 
+//    drugą liczbę:...
+//    Podaj numer operacji do wykonania:
+//    1.Dodawanie
+//    2.Odejmowanie
+//    3.Mnożenie
+//    4.Dzielenie...
+    
+//    Twój wynik to:
+
+Console.WriteLine("Podaj pierwszą liczbę: ");
 int number1 = int.Parse(Console.ReadLine());
 
 Console.WriteLine("Podaj drugą liczbę: ");
@@ -20,35 +32,30 @@ Int32.TryParse(operation, out operationType);
 
 double result = 0;
 
-try
+switch (operationType)
 {
-    switch (operationType)
-    {
-        case 1:
-            result = number1 + number2;
+    case 1:
+        result = number1 + number2;
+        Console.WriteLine($"Twój wynik to: {result}");
+        break;
+    case 2:
+        result = number1 - number2;
+        Console.WriteLine($"Twój wynik to: {result}");
+        break;
+    case 3:
+        result = number1 * number2;
+        Console.WriteLine($"Twój wynik to: {result}");
+        break;
+    case 4:
+        if (number2 == 0)
+        {
+            Console.WriteLine("Nie można dzielić przez 0!");
             break;
-        case 2:
-            result = number1 - number2;
-            break;
-        case 3:
-            result = number1 * number2;
-            break;
-        case 4:
-            if (number2 == 0)
-                throw new ArithmeticException("Niestety nie można dzielić przez 0");
-            result = (double)number1 / number2;
-            break;
-        default:
-            throw new Exception("Nie ma takiej operacji");
-    }
-
-    Console.WriteLine($"Twój wynik to: {result}");
-}
-catch (ArithmeticException a)
-{
-    Console.WriteLine($"{a}");
-}
-catch (Exception e)
-{
-    Console.WriteLine($"{e}");
+        }
+        result = (double)number1 / number2;
+        Console.WriteLine($"Twój wynik to: {result}");
+        break;
+    default:
+        Console.WriteLine("Nie ma takiej operacji");
+        break;
 }

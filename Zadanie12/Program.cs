@@ -1,4 +1,11 @@
-﻿int dayNo = 4;
+﻿//12.Napisz program, który pobierze numer dnia tygodnia i wyświetli jego nazwęDane 
+    
+//    testowe: 4
+    
+//    Rezultat w terminalu:
+//    Czwartek
+
+int dayNo = 4;
 
 switch (dayNo)
 {
@@ -20,7 +27,10 @@ switch (dayNo)
     case 6:
         Console.WriteLine("Sobota");
         break;
-    default:
+    case 7:
         Console.WriteLine("Niedziela");
+        break;
+    default:
+        Console.WriteLine("Nie występuje taki dzień w tygodniu!");
         break;
 }
