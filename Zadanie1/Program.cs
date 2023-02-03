@@ -1,6 +1,10 @@
-﻿int a = 5;
-int b = 5;
+﻿int number1 = 5;
+int number2 = 5;
 
-string result = a == b ? $"{a} i {b} są równe" : $"{a} i {b} NIE są równe";
-
-System.Console.WriteLine(result);
+if (number1 == number2)
+{
+    Console.WriteLine($"{number1} i {number2} są równe");
+} else
+{
+    Console.WriteLine($"{number1} i {number2} NIE są równe");
+}

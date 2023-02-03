@@ -20,31 +20,35 @@ Int32.TryParse(operation, out operationType);
 
 double result = 0;
 
-switch (operationType)
+try
 {
-    case 1:
-        result = number1 + number2;
-        break;
-    case 2:
-        result = number1 - number2;
-        break;
-    case 3:
-        result = number1 * number2;
-        break;
-    case 4:
-        if (number2 != 0)
-            result = (double) number1 / number2;
-        break;
-    default:
-        Console.WriteLine("Nie ma takiej operacji");
-        break;
-}
+    switch (operationType)
+    {
+        case 1:
+            result = number1 + number2;
+            break;
+        case 2:
+            result = number1 - number2;
+            break;
+        case 3:
+            result = number1 * number2;
+            break;
+        case 4:
+            if (number2 == 0)
+                throw new ArithmeticException("Niestety nie można dzielić przez 0");
+            result = (double)number1 / number2;
+            break;
+        default:
+            throw new Exception("Nie ma takiej operacji");
+    }
 
-if (result == 0)
-{
-    Console.WriteLine("Nie dziel przez 0");
-}
-else
-{
     Console.WriteLine($"Twój wynik to: {result}");
+}
+catch (ArithmeticException a)
+{
+    Console.WriteLine($"{a}");
+}
+catch (Exception e)
+{
+    Console.WriteLine($"{e}");
 }
